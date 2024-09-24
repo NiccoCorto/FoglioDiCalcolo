@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FoglioDiCalcolo",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "FoglioDiCalcolo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FoglioDiCalcolo-Debug-cef1cd1422db45affba1.json",
+					"name" : "FoglioDiCalcolo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FoglioDiCalcolo_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FoglioDiCalcolo_lib-Debug-d800182141552ca47fe7.json",
+					"name" : "FoglioDiCalcolo_lib",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug",
+		"source" : "/home/nicco/c++/projects/FoglioDiCalcolo"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

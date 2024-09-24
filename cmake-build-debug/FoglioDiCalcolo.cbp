@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="FoglioDiCalcolo"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FoglioDiCalcolo_lib">
+				<Option output="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/libFoglioDiCalcolo_lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_FILE_OFFSET_BITS=64"/>
+					<Add option="-DWXUSINGDLL"/>
+					<Add option="-D__WXGTK__"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/wx/include/gtk3-unicode-3.0"/>
+					<Add directory="/usr/include/wx-3.0"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 FoglioDiCalcolo_lib"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FoglioDiCalcolo_lib/fast">
+				<Option output="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/libFoglioDiCalcolo_lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_FILE_OFFSET_BITS=64"/>
+					<Add option="-DWXUSINGDLL"/>
+					<Add option="-D__WXGTK__"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/wx/include/gtk3-unicode-3.0"/>
+					<Add directory="/usr/include/wx-3.0"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 FoglioDiCalcolo_lib/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FoglioDiCalcolo">
+				<Option output="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/FoglioDiCalcolo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_FILE_OFFSET_BITS=64"/>
+					<Add option="-DWXUSINGDLL"/>
+					<Add option="-D__WXGTK__"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/wx/include/gtk3-unicode-3.0"/>
+					<Add directory="/usr/include/wx-3.0"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 FoglioDiCalcolo"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FoglioDiCalcolo/fast">
+				<Option output="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/FoglioDiCalcolo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_FILE_OFFSET_BITS=64"/>
+					<Add option="-DWXUSINGDLL"/>
+					<Add option="-D__WXGTK__"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/wx/include/gtk3-unicode-3.0"/>
+					<Add directory="/usr/include/wx-3.0"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 FoglioDiCalcolo/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/include/Cell.h">
+			<Option target="FoglioDiCalcolo_lib"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/include/Function.h">
+			<Option target="FoglioDiCalcolo_lib"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/include/GridInterface.h">
+			<Option target="FoglioDiCalcolo_lib"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/include/Observer.h">
+			<Option target="FoglioDiCalcolo_lib"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/include/Subject.h">
+			<Option target="FoglioDiCalcolo_lib"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/src/Cell.cpp">
+			<Option target="FoglioDiCalcolo_lib"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/src/Function.cpp">
+			<Option target="FoglioDiCalcolo_lib"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/src/GridInterface.cpp">
+			<Option target="FoglioDiCalcolo_lib"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/src/Observer.cpp">
+			<Option target="FoglioDiCalcolo_lib"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/src/Subject.cpp">
+			<Option target="FoglioDiCalcolo_lib"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/src/main.cpp">
+			<Option target="FoglioDiCalcolo"/>
+		</Unit>
+		<Unit filename="/home/nicco/c++/projects/FoglioDiCalcolo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
