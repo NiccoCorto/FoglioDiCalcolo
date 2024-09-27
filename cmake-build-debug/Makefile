@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -141,6 +151,19 @@ FoglioDiCalcolo: cmake_check_build_system
 FoglioDiCalcolo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FoglioDiCalcolo.dir/build.make CMakeFiles/FoglioDiCalcolo.dir/build
 .PHONY : FoglioDiCalcolo/fast
+
+#=============================================================================
+# Target rules for targets named runTests
+
+# Build rule for target.
+runTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runTests
+.PHONY : runTests
+
+# fast build rule for target.
+runTests/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/build
+.PHONY : runTests/fast
 
 src/Cell.o: src/Cell.cpp.o
 .PHONY : src/Cell.o
@@ -294,8 +317,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... FoglioDiCalcolo"
 	@echo "... FoglioDiCalcolo_lib"
+	@echo "... runTests"
 	@echo "... src/Cell.o"
 	@echo "... src/Cell.i"
 	@echo "... src/Cell.s"

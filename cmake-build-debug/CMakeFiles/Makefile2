@@ -65,16 +65,33 @@ CMAKE_BINARY_DIR = /home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug
 # The main recursive "all" target.
 all: CMakeFiles/FoglioDiCalcolo_lib.dir/all
 all: CMakeFiles/FoglioDiCalcolo.dir/all
+all: test/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: test/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/FoglioDiCalcolo_lib.dir/clean
 clean: CMakeFiles/FoglioDiCalcolo.dir/clean
+clean: test/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory test
+
+# Recursive "all" directory target.
+test/all: test/CMakeFiles/runTests.dir/all
+.PHONY : test/all
+
+# Recursive "preinstall" directory target.
+test/preinstall:
+.PHONY : test/preinstall
+
+# Recursive "clean" directory target.
+test/clean: test/CMakeFiles/runTests.dir/clean
+.PHONY : test/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/FoglioDiCalcolo_lib.dir
@@ -127,6 +144,32 @@ FoglioDiCalcolo: CMakeFiles/FoglioDiCalcolo.dir/rule
 CMakeFiles/FoglioDiCalcolo.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FoglioDiCalcolo.dir/build.make CMakeFiles/FoglioDiCalcolo.dir/clean
 .PHONY : CMakeFiles/FoglioDiCalcolo.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/runTests.dir
+
+# All Build rule for target.
+test/CMakeFiles/runTests.dir/all: CMakeFiles/FoglioDiCalcolo_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12 "Built target runTests"
+.PHONY : test/CMakeFiles/runTests.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/runTests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/runTests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nicco/c++/projects/FoglioDiCalcolo/cmake-build-debug/CMakeFiles 0
+.PHONY : test/CMakeFiles/runTests.dir/rule
+
+# Convenience name for target.
+runTests: test/CMakeFiles/runTests.dir/rule
+.PHONY : runTests
+
+# clean rule for target.
+test/CMakeFiles/runTests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/clean
+.PHONY : test/CMakeFiles/runTests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

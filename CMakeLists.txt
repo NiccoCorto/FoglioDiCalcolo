@@ -8,6 +8,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(wxWidgets REQUIRED COMPONENTS core base)
 include(${wxWidgets_USE_FILE})
 
+#set all files in a lib variable
 add_library(${PROJECT_NAME}_lib
         include/Cell.h
         include/Function.h
@@ -24,9 +25,13 @@ add_library(${PROJECT_NAME}_lib
 
 target_link_libraries(${PROJECT_NAME}_lib ${wxWidgets_LIBRARIES})
 
-add_executable(FoglioDiCalcolo src/main.cpp
-)
+add_executable(FoglioDiCalcolo src/main.cpp)
 
+#link project to the lib variable and wxwidgets lib
 target_link_libraries(FoglioDiCalcolo ${PROJECT_NAME}_lib ${wxWidgets_LIBRARIES})
 
-#add_subdirectory(tests)
+#gtest
+enable_testing()
+
+add_subdirectory(test)
+
