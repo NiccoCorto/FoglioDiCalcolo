@@ -12,7 +12,7 @@ void GridInterface::InitializeGrid(wxPanel *panel) {
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 4; ++j) {
             cells[i][j] = std::make_shared<Cell>(); //shared by function and gridInterface
-            cellInputs[i][j] = new wxTextCtrl(panel, wxID_ANY);
+            cellInputs[i][j] = new wxTextCtrl(panel, wxID_ANY, "0"); //default value to initialize function values
             gridSizer->Add(cellInputs[i][j], 1, wxEXPAND | wxALL);  // Add each control to the grid sizer
             cellInputs[i][j]->Bind(wxEVT_TEXT, &GridInterface::OnCellValueChanged, this);  // Bind event
         }
@@ -33,13 +33,14 @@ void GridInterface::InitializeGrid(wxPanel *panel) {
     maxFunction = std::make_unique<Function>(Function::MAX, allCells);
 
     // Create readonly text controls to display the results
-    sumText = new wxTextCtrl(panel, wxID_ANY, std::to_string(sumFunction->getValue()), wxDefaultPosition, wxDefaultSize,
+    //set initial value to 0
+    sumText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize,
                              wxTE_READONLY);
-    meanText = new wxTextCtrl(panel, wxID_ANY, std::to_string(meanFunction->getValue()), wxDefaultPosition,
+    meanText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition,
                               wxDefaultSize, wxTE_READONLY);
-    minText = new wxTextCtrl(panel, wxID_ANY, std::to_string(minFunction->getValue()), wxDefaultPosition, wxDefaultSize,
+    minText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize,
                              wxTE_READONLY);
-    maxText = new wxTextCtrl(panel, wxID_ANY, std::to_string(maxFunction->getValue()), wxDefaultPosition, wxDefaultSize,
+    maxText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize,
                              wxTE_READONLY);
 
     // Ensure these are added AFTER all cell inputs
@@ -60,13 +61,15 @@ void GridInterface::OnCellValueChanged(wxCommandEvent &event) {
 
             // Check if the valueStr can be converted to a long integer
             if (valueStr.ToLong(&value)) {
-                // Successfully converted to long, set cell value
+                // Successfully converted
                 if (cells[i][j]) {
+                    cellInputs[i][j]->SetBackgroundColour(*wxWHITE);
                     cells[i][j]->setValue(static_cast<int>(value));
                 }
             } else {
-                // Conversion failed, set default value
+                // Conversion failed
                 if (cells[i][j]) {
+                    cellInputs[i][j]->SetBackgroundColour(*wxRED);
                     cells[i][j]->setValue(0);
                 }
             }
