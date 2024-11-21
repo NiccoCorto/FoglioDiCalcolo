@@ -1,2 +1,0 @@
-/usr/bin/ar qc libFoglioDiCalcolo_lib.a CMakeFiles/FoglioDiCalcolo_lib.dir/src/Cell.cpp.o CMakeFiles/FoglioDiCalcolo_lib.dir/src/Function.cpp.o CMakeFiles/FoglioDiCalcolo_lib.dir/src/GridInterface.cpp.o CMakeFiles/FoglioDiCalcolo_lib.dir/src/Observer.cpp.o CMakeFiles/FoglioDiCalcolo_lib.dir/src/Subject.cpp.o
-/usr/bin/ranlib libFoglioDiCalcolo_lib.a
