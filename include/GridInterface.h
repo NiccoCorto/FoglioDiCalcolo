@@ -9,25 +9,32 @@
 #include "Cell.h"
 #include "Function.h"
 #include <memory>
+#include <deque>
 
 class GridInterface {
 public:
     GridInterface(wxPanel *panel);
 
     void OnCellValueChanged(wxCommandEvent &event);
+    void OnAddCell(wxCommandEvent &event);
+    void OnRemoveCell(wxCommandEvent &event);
 
 private:
-    wxTextCtrl *cellInputs[4][4];
     wxTextCtrl *sumText;
     wxTextCtrl *meanText;
     wxTextCtrl *minText;
     wxTextCtrl *maxText;
 
-    std::shared_ptr<Cell> cells[4][4];
+    std::deque<std::shared_ptr<Cell>> cells;
+    std::deque<wxTextCtrl *> cellInputs;
+
     std::unique_ptr<Function> sumFunction;
     std::unique_ptr<Function> meanFunction;
     std::unique_ptr<Function> minFunction;
     std::unique_ptr<Function> maxFunction;
+
+    wxGridSizer *gridSizer;
+    wxPanel *panel;
 
     void InitializeGrid(wxPanel *panel);
 

@@ -18,7 +18,11 @@ public:
 
     int getValue() const { return value; }
 
-    void update(Subject *subject) override;
+    void update() override;
+
+    void addCell(const std::shared_ptr<Cell> &cell);
+
+    void removeCell(const std::shared_ptr<Cell> &cell);
 
 private:
     Type type;

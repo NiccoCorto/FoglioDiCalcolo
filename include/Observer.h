@@ -7,7 +7,7 @@ class Subject;
 
 class Observer {
 public:
-    virtual void update(Subject *subject) = 0;
+    virtual void update() = 0;
 };
 
 #endif //PROJECTS_OBSERVER_H

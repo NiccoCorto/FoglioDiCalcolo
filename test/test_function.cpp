@@ -9,7 +9,7 @@ TEST(FunctionTest, SumFunction) {
     std::vector<std::shared_ptr<Cell>> cells = {cell1, cell2};
 
     Function sumFunc(Function::SUM, cells);
-    sumFunc.update(nullptr); // Trigger update manually
+    sumFunc.update(); // Trigger update manually
     EXPECT_EQ(sumFunc.getValue(), 30);  // Verifica il valore della somma
 }
 
@@ -20,7 +20,7 @@ TEST(FunctionTest, MeanFunction) {
     std::vector<std::shared_ptr<Cell>> cells = {cell1, cell2};
 
     Function meanFunc(Function::MEAN, cells);
-    meanFunc.update(nullptr); // Trigger update manually
+    meanFunc.update(); // Trigger update manually
     EXPECT_EQ(meanFunc.getValue(), 15);  // Verifica il valore medio
 }
 
@@ -31,7 +31,7 @@ TEST(FunctionTest, MinFunction) {
     std::vector<std::shared_ptr<Cell>> cells = {cell1, cell2};
 
     Function minFunc(Function::MIN, cells);
-    minFunc.update(nullptr); // Trigger update manually
+    minFunc.update(); // Trigger update manually
     EXPECT_EQ(minFunc.getValue(), 10);  // Verifica il valore minimo
 }
 
@@ -42,6 +42,6 @@ TEST(FunctionTest, MaxFunction) {
     std::vector<std::shared_ptr<Cell>> cells = {cell1, cell2};
 
     Function maxFunc(Function::MAX, cells);
-    maxFunc.update(nullptr); // Trigger update manually
+    maxFunc.update(); // Trigger update manually
     EXPECT_EQ(maxFunc.getValue(), 20);  // Verifica il valore massimo
 }
