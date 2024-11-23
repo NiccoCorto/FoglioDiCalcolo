@@ -94,6 +94,7 @@ void GridInterface::OnAddCell(wxCommandEvent &event) {
     // Add to layout and refresh
     gridSizer->Add(input, 1, wxEXPAND | wxALL);
     panel->Layout();
+    UpdateFunctionResults();
 }
 
 void GridInterface::OnRemoveCell(wxCommandEvent &event) {
