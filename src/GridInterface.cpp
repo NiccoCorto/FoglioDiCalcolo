@@ -20,9 +20,30 @@ GridInterface::GridInterface(wxPanel *panel) {
 
 void GridInterface::InitializeGrid(wxPanel *panel) {
     this->panel = panel;
-    gridSizer = new wxGridSizer(0, 4, 10, 10);
 
-    // Add initial 4x4 grid of cells
+    // Layout principale con un wxBoxSizer verticale
+    auto mainSizer = new wxBoxSizer(wxVERTICAL);
+
+    // Sezione Funzioni (celle readonly)
+    auto functionSizer = new wxGridSizer(2, 4, 10, 10); // Una riga, quattro colonne
+    sumText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
+    meanText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
+    minText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
+    maxText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
+    functionSizer->Add(new wxStaticText(panel, wxID_ANY, "Sum:"), 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    functionSizer->Add(sumText, 1, wxEXPAND | wxALL, 5);
+    functionSizer->Add(new wxStaticText(panel, wxID_ANY, "Mean:"), 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    functionSizer->Add(meanText, 1, wxEXPAND | wxALL, 5);
+    functionSizer->Add(new wxStaticText(panel, wxID_ANY, "Min:"), 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    functionSizer->Add(minText, 1, wxEXPAND | wxALL, 5);
+    functionSizer->Add(new wxStaticText(panel, wxID_ANY, "Max:"), 0, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+    functionSizer->Add(maxText, 1, wxEXPAND | wxALL, 5);
+
+    // Aggiungi functionSizer al mainSizer
+    mainSizer->Add(functionSizer, 0, wxEXPAND | wxALL, 10);
+
+    // Sezione griglia di input
+    gridSizer = new wxGridSizer(0, 4, 10, 10);
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 4; ++j) {
             auto cell = std::make_shared<Cell>();
@@ -35,33 +56,22 @@ void GridInterface::InitializeGrid(wxPanel *panel) {
             gridSizer->Add(input, 1, wxEXPAND | wxALL);
         }
     }
+    mainSizer->Add(gridSizer, 1, wxEXPAND | wxALL, 10);
 
-    // Initialize functions with the cells after they are created
-    std::vector<std::shared_ptr<Cell>> cellsVector(cells.begin(), cells.end());
-    sumFunction = std::make_unique<Function>(Function::SUM, cellsVector);
-    meanFunction = std::make_unique<Function>(Function::MEAN, cellsVector);
-    minFunction = std::make_unique<Function>(Function::MIN, cellsVector);
-    maxFunction = std::make_unique<Function>(Function::MAX, cellsVector);
-
-    sumText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
-    meanText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
-    minText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
-    maxText = new wxTextCtrl(panel, wxID_ANY, "0", wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
-
-    gridSizer->Add(sumText, 1, wxEXPAND | wxALL);
-    gridSizer->Add(meanText, 1, wxEXPAND | wxALL);
-    gridSizer->Add(minText, 1, wxEXPAND | wxALL);
-    gridSizer->Add(maxText, 1, wxEXPAND | wxALL);
-
-    // Add + and - buttons for adding/removing cells
+    // Sezione dei pulsanti (+ e -)
+    auto buttonSizer = new wxBoxSizer(wxHORIZONTAL);
     auto addButton = new wxButton(panel, wxID_ANY, "+");
     auto removeButton = new wxButton(panel, wxID_ANY, "-");
     addButton->Bind(wxEVT_BUTTON, &GridInterface::OnAddCell, this);
     removeButton->Bind(wxEVT_BUTTON, &GridInterface::OnRemoveCell, this);
-    gridSizer->Add(addButton, 1, wxEXPAND | wxALL);
-    gridSizer->Add(removeButton, 1, wxEXPAND | wxALL);
+    buttonSizer->Add(addButton, 1, wxEXPAND | wxALL, 5);
+    buttonSizer->Add(removeButton, 1, wxEXPAND | wxALL, 5);
 
-    panel->SetSizer(gridSizer);
+    // Aggiungi buttonSizer al mainSizer
+    mainSizer->Add(buttonSizer, 0, wxALIGN_CENTER | wxALL, 10);
+
+    // Imposta il mainSizer come sizer del pannello
+    panel->SetSizer(mainSizer);
     panel->Layout();
 }
 
