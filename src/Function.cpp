@@ -18,7 +18,7 @@ void Function::update() {
         case MEAN:
             value = std::accumulate(cells.begin(), cells.end(), 0, [](int sum, const std::shared_ptr<Cell> &cell) {
                 return sum + cell->getValue();
-            }) / cells.size();
+            }) /static_cast<double> (cells.size());
             break;
         case MIN:
             value = (*std::min_element(cells.begin(), cells.end(),
